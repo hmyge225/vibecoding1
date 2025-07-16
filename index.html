@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Développeur Frontend</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* En-tête héros */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff10" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            background-size: cover;
+            color: white;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+        }
+
+        /* Section de présentation */
+        .about-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden; /* Ajouté pour masquer les débordements */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20%;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Section passions */
+        .passions-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .passions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .passion-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .passion-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .passion-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .passion-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section héros -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title"> Mangoua jean serge </h1>
+                <p class="hero-subtitle">Développeur Frontend Passionné</p>
+                <a href="#projets" class="cta-button">Voir mes projets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="photo_identité.jpg" alt="Photo de profil de Mangoua Jean Serge">
+                </div>
+                <div class="about-text">
+                    <h3>Bonjour ! Je suis un développeur frontend passionné</h3>
+                    <p>
+                        Avec une solide expérience en développement web moderne, je me spécialise dans la création d'interfaces utilisateur intuitives et performantes. Mon objectif est de transformer des idées créatives en expériences numériques exceptionnelles.
+                    </p>
+                    <p>
+                        Je maîtrise les technologies comme HTML5, CSS3, JavaScript, React, et bien d'autres. J'aime relever de nouveaux défis et apprendre continuellement pour rester à la pointe des dernières tendances du développement frontend.
+                    </p>
+                    <p>
+                        Mon approche combine créativité, rigueur technique et attention aux détails pour livrer des projets qui dépassent les attentes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Passions -->
+    <section class="passions-section">
+        <div class="container">
+            <h2 class="section-title">Mes Passions</h2>
+            <div class="passions-grid">
+                <div class="passion-card">
+                    <div class="passion-icon">🎨</div>
+                    <h4>Design UI/UX</h4>
+                    <p>Création d'interfaces élégantes et intuitives qui offrent une expérience utilisateur exceptionnelle.</p>
+                </div>
+                <div class="passion-card">
+                    <div class="passion-icon">⚡</div>
+                    <h4>Performance Web</h4>
+                    <p>Optimisation des applications pour des temps de chargement rapides et une expérience fluide.</p>
+                </div>
+                <div class="passion-card">
+                    <div class="passion-icon">📱</div>
+                    <h4>Responsive Design</h4>
+                    <p>Développement d'applications qui s'adaptent parfaitement à tous les appareils et tailles d'écran.</p>
+                </div>
+                <div class="passion-card">
+                    <div class="passion-icon">🚀</div>
+                    <h4>Technologies Modernes</h4>
+                    <p>Exploration et maîtrise des derniers frameworks et outils de développement frontend.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les éléments à animer
+        document.querySelectorAll('.passion-card, .about-content').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour le bouton CTA
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('.about-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
